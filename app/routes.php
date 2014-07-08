@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/{chunksize}', 'ProcessController@Process');
+Route::get('/process/{chunksize}/{phone}', 'ProcessController@Process');
+Route::get('/', 'MainController@Home');
+Route::get('/resume/{userid}', 'MainController@Resume');
