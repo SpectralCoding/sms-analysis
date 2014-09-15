@@ -8,12 +8,12 @@ class SMSFile {
 		$this->SMSMessages = array();
 	}
 
-	public function getSMSObjs($filename, $phone) {
+	public function get_sms_objects($filename, $phone) {
 		if (is_dir($filename)) {
 			$filelist = scandir($filename);
 			foreach ($filelist as $curFile) { 
 				if (substr($curFile, 0, 1) != '.') {
-					$this->getSMSObjs($filename . $curFile, $phone);
+					$this->get_sms_objects($filename . $curFile, $phone);
 				}
 			}
 		} else {

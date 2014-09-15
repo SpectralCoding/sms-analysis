@@ -14,3 +14,6 @@
 Route::get('/process/{chunksize}/{phone}', 'ProcessController@Process');
 Route::get('/', 'MainController@Home');
 Route::get('/resume/{userid}', 'MainController@Resume');
+Route::get('/upload', 'MainController@UploadList');
+Route::delete('/upload/{filename}', 'MainController@UploadDelete');
+Route::post('/upload', 'MainController@UploadAction');

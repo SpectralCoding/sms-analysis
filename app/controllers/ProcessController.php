@@ -5,7 +5,7 @@ class ProcessController extends BaseController {
 	public function process($chunkSize, $phone) {
 		$start = microtime(true);
 		$smsFile = new SMSFile();
-		$smsFile->getSMSObjs('/content/www/trips.spectralcoding.com/files/', $phone);
+		$smsFile->getSMSObjs(realpath(Config::get('smsanalyzer.store') . '/' . Session::get('userid')), $phone);
 		$tempArr = $smsFile->SMSMessages;
 
 		usort($tempArr, function($a, $b) {
